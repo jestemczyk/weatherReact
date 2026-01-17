@@ -1,16 +1,65 @@
-# React + Vite
+### Задача 1.1: Требования приложения погоды
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Создать приложение погоды, которое отображает текущую погоду для выбранного местоположения. Приложение должно позволять пользователям искать место и просматривать актуальные данные о погоде.
 
-Currently, two official plugins are available:
+### Задача 1.2: Функциональность приложения погоды
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Реализовать следующий функционал в приложении:
 
-## React Compiler
+- ✅ Отображение текущей погоды для выбранного местоположения
+- ✅ Поиск по названию города/местоположения с помощью OpenWeatherMap API
+  API_KEY = "21571e236ae1e7500c50aabca16ad13c"
+  url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`;
+- ✅ Отображение текущей даты (с днём недели, месяцем и годом)
+- ✅ Отображение скорости ветра (м/с) и влажности (%)
+- ✅ ✅ Отображение температуры в Цельсиях и Фаренгейтах с переключением между ними
+- ✅ Отображение условий погоды (облачно, солнечно, дождь и т.д.) с иконкой из OpenWeatherMap
+- ✅ Отображение ощущаемой температуры и максимальной температуры
+- ✅ Отображение названия местоположения и иконки погоды
+- ✅ Обработка ошибок при поиске несуществующего города
+- ✅ Индикатор загрузки во время в### Задача 1.1: Требования приложения погоды
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Создать приложение погоды, которое отображает текущую погоду для выбранного местоположения. Приложение должно позволять пользователям искать место и просматривать актуальные данные о погоде.
 
-## Expanding the ESLint configuration
+### Задача 1.2: Функциональность приложения погоды
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Реализовать следующий функционал в приложении:
+
+- ✅ Отображение текущей погоды для выбранного местоположения
+- ✅ Поиск по названию города/местоположения с помощью OpenWeatherMap API
+  API_KEY = "21571e236ae1e7500c50aabca16ad13c"
+  url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`;
+- ✅ Отображеыполнения запроса
+
+### Задача 1.3: Лучшие практики разработки
+
+Реализовано:
+
+- ✅ React Hooks для управления состоянием (useState)
+- ✅ Компонентная архитектура (разделение на отдельные компоненты)
+- ✅ Функциональные компоненты
+- ✅ Правильная обработка ошибок и исключений
+
+### Архитектура проекта
+
+```
+src/
+├── App.js                    # Главный компонент (управление состоянием)
+├── index.css                 # Глобальные стили
+├── index.js                  # Точка входа
+└── components/
+    ├── SearchBar.jsx         # Компонент поиска
+    ├── DateDisplay.jsx       # Компонент отображения даты
+    ├── LoadingSpinner.jsx    # Компонент индикатора загрузки
+    ├── WeatherCard.jsx       # Компонент карточки погоды
+    ├── UnitSelect.jsx        # Компонент выбора единиц температуры
+    ├── Alert.jsx             # Компонент для отображения алертов
+    └── Footer.jsx            # Компонент подвала
+```
+
+### Используемые технологии и библиотеки
+
+- **React 19.2** — фреймворк для построения UI
+- **OpenWeatherMap API** — API для получения данных о погоде
+- **react-select** — библиотека для создания выпадающих списков
+- **react-loader-spinner** — библиотека для анимации загрузки
